@@ -3,6 +3,7 @@ package ru.netology;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 public class RadioTest {
 
     Radio radio = new Radio();
@@ -156,6 +157,47 @@ public class RadioTest {
 
         int expected = 0;
         int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCreateStationsWithLimits1() {
+
+        Radio radio = new Radio(1);
+
+        int expected = 0;
+        int actual = radio.getMaxStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCreateStationsWithLimits2() {
+        Radio radio = new Radio(5);
+
+        int expected = 4;
+        int actual = radio.getMaxStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCreateStationsWithLimits3() {
+        Radio radio = new Radio(50);
+
+        int expected = 49;
+        int actual = radio.getMaxStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCreateStationsWithLimits4() {
+        Radio radio = new Radio(30);
+
+        int expected = 0;
+        int actual = radio.getMinStation();
 
         Assertions.assertEquals(expected, actual);
     }
