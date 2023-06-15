@@ -1,35 +1,61 @@
 package ru.netology;
 
-public class Radio {
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+//import java.util.Objects;
 
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
+
+
+public class Radio {
     private int maxStation = 9;
     private final int minStation = 0;
     private int currentStation;
     private int currentVolume;
+//    int maxVolume = 100;
+//    int minVolume = 0;
 
     public Radio() {
+
     }
 
     public Radio(int currentStation) {
 
-        maxStation = currentStation - 1;
+        this.maxStation = currentStation - 1;
     }
-
 
     public int getMaxStation() {
 
-        return maxStation;
+        return this.maxStation;
     }
 
     public int getMinStation() {
 
-        return minStation;
+        return this.minStation;
     }
 
-    public int getCurrentStation() {
+    public int getCurrentVolume() {
 
-        return currentStation;
+        return this.currentVolume;
     }
+
+//    public int getMaxVolume() {
+//
+//        return this.maxVolume;
+//    }
+
+//    public int getMinVolume() {
+//
+//        return this.minVolume;
+//    }
+
+//    public void setMaxStation(int maxStation) {
+//
+//        this.maxStation = maxStation;
+//    }
 
     public void setCurrentStation(int currentStation) {
 
@@ -56,10 +82,9 @@ public class Radio {
             currentStation = currentStation - 1;
         }
     }
+    public int getCurrentStation() {
 
-    public int getCurrentVolume() {
-
-        return currentVolume;
+        return this.currentStation;
     }
 
     public void setCurrentVolume(int currentVolume) {
@@ -86,5 +111,15 @@ public class Radio {
             currentVolume = minVolume;
         }
     }
+
+//    public void setMaxVolume(int maxVolume) {
+//
+//        this.maxVolume = maxVolume;
+//    }
+
+//    public void setMinVolume(int minVolume) {
+//
+//        this.minVolume = minVolume;
+//    }
 
 }
