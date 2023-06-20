@@ -1,61 +1,24 @@
 package ru.netology;
 
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//import java.util.Objects;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Data
+@NoArgsConstructor
+@Data
 
 
 public class Radio {
-    private int maxStation = 9;
-    private final int minStation = 0;
-    private int Station;
-    private int Volume;
-//    int maxVolume = 100;
-//    int minVolume = 0;
+    int maxStation = 9;
+    int minStation = 0;
+    int Station;
+    int Volume;
+    int maxVolume = 100;
+    int minVolume = 0;
 
-    public Radio() {
-
+    public Radio(int NewStation) {
+        this.Station = NewStation;
+        maxStation = NewStation - 1;
     }
-
-    public Radio(int Station) {
-
-        this.maxStation = Station - 1;
-    }
-
-    public int getMaxStation() {
-
-        return this.maxStation;
-    }
-
-    public int getMinStation() {
-
-        return this.minStation;
-    }
-
-    public int getVolume() {
-
-        return this.Volume;
-    }
-
-//    public int getMaxVolume() {
-//
-//        return this.maxVolume;
-//    }
-
-//    public int getMinVolume() {
-//
-//        return this.minVolume;
-//    }
-
-//    public void setMaxStation(int maxStation) {
-//
-//        this.maxStation = maxStation;
-//    }
 
     public void setStation(int Station) {
 
@@ -82,19 +45,9 @@ public class Radio {
             Station = Station - 1;
         }
     }
-    public int getStation() {
-
-        return this.Station;
-    }
-
-    public void setVolume(int Volume) {
-
-        this.Volume = Volume;
-    }
 
     public void increaseVolume() {
 
-        int maxVolume = 100;
         if (Volume < maxVolume) {
             Volume = Volume + 1;
         } else {
@@ -104,22 +57,10 @@ public class Radio {
 
     public void reduceVolume() {
 
-        int minVolume = 0;
         if (Volume > minVolume) {
             Volume = Volume - 1;
         } else {
             Volume = minVolume;
         }
     }
-
-//    public void setMaxVolume(int maxVolume) {
-//
-//        this.maxVolume = maxVolume;
-//    }
-
-//    public void setMinVolume(int minVolume) {
-//
-//        this.minVolume = minVolume;
-//    }
-
 }

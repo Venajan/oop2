@@ -9,7 +9,7 @@ public class RadioTest {
     Radio radio = new Radio();
 
     @Test
-    void shouldChangeValidStation() {
+    void shouldSetStation1() {
 
         radio.setStation(5);
 
@@ -20,7 +20,7 @@ public class RadioTest {
     }
 
     @Test
-    void shouldChangeNotValidPositiveStation() {
+    void shouldSetStation2() {
 
         radio.setStation(10);
 
@@ -31,7 +31,7 @@ public class RadioTest {
     }
 
     @Test
-    void shouldChangeNotValidNegativeStation() {
+    void shouldSetStation3() {
 
         radio.setStation(-1);
 
@@ -42,7 +42,7 @@ public class RadioTest {
     }
 
     @Test
-    void shouldNextStation() {
+    void shouldNextStation1() {
 
         radio.setStation(5);
         radio.nextStation();
@@ -108,7 +108,7 @@ public class RadioTest {
         radio.increaseVolume();
 
         int expected = 100;
-        int actual = radio.getVolume();
+        int actual = radio.getMaxVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -120,7 +120,7 @@ public class RadioTest {
         radio.increaseVolume();
 
         int expected = 100;
-        int actual = radio.getVolume();
+        int actual = radio.getMaxVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -144,7 +144,7 @@ public class RadioTest {
         radio.reduceVolume();
 
         int expected = 0;
-        int actual = radio.getVolume();
+        int actual = radio.getMinVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -156,7 +156,7 @@ public class RadioTest {
         radio.reduceVolume();
 
         int expected = 0;
-        int actual = radio.getVolume();
+        int actual = radio.getMinVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -174,16 +174,6 @@ public class RadioTest {
 
     @Test
     void shouldCreateStationsWithLimits2() {
-        Radio radio = new Radio(5);
-
-        int expected = 4;
-        int actual = radio.getMaxStation();
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldCreateStationsWithLimits3() {
         Radio radio = new Radio(50);
 
         int expected = 49;
@@ -193,13 +183,12 @@ public class RadioTest {
     }
 
     @Test
-    void shouldCreateStationsWithLimits4() {
-        Radio radio = new Radio(30);
+    void shouldCreateStationsWithLimits3() {
+        Radio radio = new Radio(10);
 
         int expected = 0;
         int actual = radio.getMinStation();
 
         Assertions.assertEquals(expected, actual);
     }
-
 }
